@@ -11,6 +11,7 @@ const home = require('./src/routes/home')
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-app.use("/", home) // use => 미들웨어를 등록해주는 메서드. app.get 과는 달리 라우팅 부분이기 때문에 미들웨어로 등록하는 것이다.
+app.use(express.static(`${__dirname}/src/public`));
+app.use("/", home); // use => 미들웨어를 등록해주는 메서드. app.get 과는 달리 라우팅 부분이기 때문에 미들웨어로 등록하는 것이다.
 
 module.exports = app;
