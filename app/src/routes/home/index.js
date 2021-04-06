@@ -5,7 +5,8 @@ const router = express.Router(); // 라우터 부분이기 때문에 app 이 아
 
 const ctrl = require('./home.ctrl');
 
-router.get('/', ctrl.home);
-router.get('/login', ctrl.login);
+router.get('/', ctrl.output.home);
+router.get('/login', ctrl.output.login);
+router.post('/login', ctrl.process.login);
 
 module.exports = router;
